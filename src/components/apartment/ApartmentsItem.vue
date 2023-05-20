@@ -1,7 +1,7 @@
 <template>
     <div class="apartments-item">
         <div class="apartments-item__inner"></div>
-        <img :src="imgSrc" alt="" class="apartments-items__photo"/>
+        <img :src="imgSrc" alt=""  class="apartments-item__photo"/>
         <div class="apartments-item__content">
             <p class="apartments-item__description">
                 {{ description }}
@@ -35,7 +35,7 @@ import StarRating from '../StarRating.vue';
             type: Number,
             required: true
         },
-        imgScr: {
+        imgSrc: {
             type: String,
             default: ''
             }
@@ -46,19 +46,17 @@ import StarRating from '../StarRating.vue';
 <style lang="scss" scoped>
 .apartments-item {
     position: relative;
-    max-width: 350px;
-    padding: 0 20;
+    width: 350px;
+    padding: 0 15px;
 
-    &__inner {
-        position: relative;
-    }
+    
 
     &__content {
         position: relative;
         padding: 20px;
         opacity: 0;
         transition: opacity 0.4;
-        background-color: rgba(#0f1d2d, 0.7);
+        background: rgba(#0f1d2d, 0.7);
         min-height: 200px;
         color: #fff;
         text-align: left;
@@ -73,6 +71,8 @@ import StarRating from '../StarRating.vue';
 
     &__description {
         margin-bottom: 20px;
+        max-height: calc(1em * 1.4 * 3);
+        overflow: hidden;
     }
 
     &__rating {
@@ -88,7 +88,7 @@ import StarRating from '../StarRating.vue';
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 90%;
         height: 100%;
         object-fit: cover;
     }

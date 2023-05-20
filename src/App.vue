@@ -1,39 +1,35 @@
 <template>
-  <ApartmentsItem
-  :description="apartment.description"
-  :price="apartment.price"
-  :rating="apartment.rating"
-  
-  />
+  <div id="app">
+    <ApartmentsList :items="apartaments">
+      <template v-slot:title>New title</template>
+      <template v-slot:apartment="{ apartment }">
+      <ApartmentsItem
+              :key="apartment.id"
+              :description="apartment.description"
+              :price="apartment.price"
+              :rating="apartment.rating"
+              :imgSrc="apartment.imgSrc"
+              class="apartments-list__item"
+              />
+      </template>
+    </ApartmentsList>
+  </div>
 </template>
 
 <script>
-import StarRating from './components/StarRating.vue';
 import ApartmentsItem from './components/apartment/ApartmentsItem.vue';
+import ApartmentsList from './components/apartment/ApartmentsList.vue';
+import apartaments from './components/apartment/apartaments';
 
 export default {
   name: 'App',
   components: {
     ApartmentsItem,
-    StarRating
+    ApartmentsList,
   },
   data() {
     return {
-      apartment: {
-        id: `1`,
-        title: "AAAAAAAAAAAAAA",
-        description: "BBBBBBBBBBBB",
-        price: 2200,
-        rating: 4.7,
-        location: {
-          city: "Dnipro",
-        },
-        owner: {
-          name: "Elien",
-          phone: "115-355-5652",
-          email: "Elien@gamil.com"
-        }
-      }
+      apartaments,
     }
   },
 }
@@ -48,4 +44,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+.apartments-list__item {
+        margin-bottom: 30px;
+    }
 </style>
