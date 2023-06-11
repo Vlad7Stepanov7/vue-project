@@ -5,17 +5,10 @@
 <script>
     export default {
     name: 'CustomInput',
-    props: {
-        text: {
-            type: String,
-            required: true,
-        }
-    },
     computed: {
         listeners() {
             return {
-                ...this.$listeners,
-                input: event => this.$emit('update:text', event.target.value)
+                input: event => this.$emit('update:modelValue', event.target.value)
             }
             }
         }
@@ -24,6 +17,8 @@
 
 <style lang="scss" scoped>
 .custom-input {
+    width: 100%;
+    min-width: 220px;
     min-height: 40px;
     border: 2px solid #FF662D;
     font-size: 18px;
