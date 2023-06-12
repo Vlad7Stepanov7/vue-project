@@ -18,7 +18,7 @@ export default [{
         id: `2`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 2450,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
@@ -34,7 +34,7 @@ export default [{
         id: `3`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 4200,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
@@ -50,7 +50,7 @@ export default [{
         id: `4`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 1200,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
@@ -66,7 +66,7 @@ export default [{
         id: `5`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 2400,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
@@ -82,7 +82,7 @@ export default [{
         id: `6`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 3600,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
@@ -114,11 +114,11 @@ export default [{
         id: `8`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 8200,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
-          city: "Dnipro",
+          city: "Kyiv",
         },
         owner: {
           name: "Elien",
@@ -130,7 +130,7 @@ export default [{
         id: `9`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 6200,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
@@ -146,7 +146,7 @@ export default [{
         id: `10`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 3200,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
@@ -162,7 +162,7 @@ export default [{
         id: `11`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 500,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
@@ -178,7 +178,7 @@ export default [{
         id: `12`,
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
-        price: 2200,
+        price: 2000,
         rating: 4.7,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {

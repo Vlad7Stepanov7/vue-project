@@ -25,7 +25,7 @@ import SubmitButton from '../Button.vue';
     },
     data() {
         return {
-            price: '0',
+            price: 0,
             city: ''
         }
     },
@@ -36,10 +36,11 @@ import SubmitButton from '../Button.vue';
     },
     methods: {
         handleSubmit() {
-            this.$emit('submit', {
+            console.log(this.city, this.price);
+            this.$emit('submitted', {
                 city: this.city,
                 price: this.price
-                })
+            })
             }
         }
     }
