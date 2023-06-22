@@ -1,12 +1,14 @@
 <template>
     <form class="form" @submit.prevent="handleSubmit">
-        <CustomSelect
-         v-model="city"
-         :items="cities"
-         class="form__select"
-         />
-        <CustomInput v-model="price" placeholder="Цена от"/>
-        <SubmitButton type="submit">
+      
+             <CustomSelect
+             v-model="city"
+             :items="cities"
+             class="form__select"
+             />
+            <CustomInput v-model="price" placeholder="Цена от"/>
+       
+        <SubmitButton type="submit" class="form__btn">
             Подбор жилья
         </SubmitButton>
     </form>
@@ -51,11 +53,15 @@ import SubmitButton from '../Button.vue';
     display: flex;
 
     &__select {
-        margin-right: 30px;
+        margin-right: 31px;
     }
 
     &__submit {
         margin-left: auto;
     }
+
+    &__btn {
+    margin-left: 419px;
+}
 }
 </style>

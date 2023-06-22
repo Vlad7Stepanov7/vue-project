@@ -1,7 +1,7 @@
 <template>
     <div class="apartments-item">
-        <div class="apartments-item__inner"></div>
-        <img :src="imgSrc" alt=""  class="apartments-item__photo"/>
+        
+        <img :src="imgUrl" alt=""  class="apartments-item__photo"/>
         <div class="apartments-item__content">
             <p class="apartments-item__description">
                 {{ description }}
@@ -10,8 +10,13 @@
                 <StarRating :rating="rating"/>
             </div>
             <div class="apartments-item__price">UAN {{ price }}</div>
+            <router-link 
+            :to="{ name: 'apartment', params: { id } }" 
+            class="apartments-item__link">
+            </router-link>
+            </div>
         </div>
-    </div>
+   
 </template>
 
 <script>
@@ -23,6 +28,10 @@ import StarRating from '../StarRating.vue';
         StarRating
     },
     props: {
+        id: {
+            type: String,
+            required: true
+        },
         description: {
             type: String,
             default: ''
@@ -35,10 +44,10 @@ import StarRating from '../StarRating.vue';
             type: Number,
             required: true
         },
-        imgSrc: {
+        imgUrl: {
             type: String,
             default: ''
-            }
+        },
         }
     }
 </script>
@@ -46,23 +55,21 @@ import StarRating from '../StarRating.vue';
 <style lang="scss" scoped>
 .apartments-item {
     position: relative;
-    width: 33.333%;
-    padding: 0 15px;
-
-    
+    width: 350px;
+    height: 196px;
+    margin: 15px;
 
     &__content {
         position: relative;
+        height: 100%;
         padding: 20px;
         opacity: 0;
         transition: opacity 0.4;
         background: rgba(#0f1d2d, 0.7);
-        min-height: 200px;
         color: #fff;
         text-align: left;
         line-height: 1.4;
         cursor: pointer;
-        z-index: 1;
 
         &:hover {
             opacity: 1;
@@ -88,9 +95,17 @@ import StarRating from '../StarRating.vue';
         position: absolute;
         top: 0;
         left: 0;
-        width: 90%;
+        width: 350px;
         height: 100%;
         object-fit: cover;
+    }
+
+    &__link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 }
 </style>

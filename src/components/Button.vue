@@ -24,10 +24,12 @@
 <style lang="scss" scoped>
 .btn {
     display: inline-block;
-    width: 220px;
-    height: 44px;
-    background: #FF662D;
-
+    min-width: 220px;
+    min-height: 44px;
+    background-color: #FF662D;
+    border: 1px solid #FF6629;
+    color: #fff;
+    
     &--outlined {
         background-color: none;
         border: 1px solid #FF6629;

@@ -40,7 +40,7 @@
         display: inline-block;
         position: absolute;
         width: 0;
-        height: 100%;
+        height: 16px;
         top: 0;
         left: 0;
         overflow: hidden;

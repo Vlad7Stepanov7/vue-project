@@ -36,12 +36,12 @@
 
 <style lang="scss" scoped>
 .custom-select {
-    height: 40px;
+    display: inline-block;
+    min-width: 220px;
+    min-height: 44px;
     border: 2px solid #FF662D;
     font-size: 18px;
-    outline: none;
     padding: 8px 15px;
     cursor: pointer;
-    display: inline-block;
 }
 </style>

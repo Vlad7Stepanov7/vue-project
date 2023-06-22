@@ -19,7 +19,7 @@ export default [{
         title: "AAAAAAAAAAAAAA",
         description: "BBBBBBBBBBBB",
         price: 2450,
-        rating: 4.7,
+        rating: 5,
         imgSrc: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROztkRB9moSTpoN-67SrGdgkiQfdjLR-2w2A&usq",
         location: {
           city: "Dnipro",

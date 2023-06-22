@@ -30,7 +30,6 @@ export default {
 .apartments-list {
     display: flex;
     flex-wrap: wrap;
-    margin-left: -15px;
-    margin-right: -15px;
+    margin: -15px;
 }
 </style>

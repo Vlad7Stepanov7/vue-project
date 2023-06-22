@@ -17,12 +17,10 @@
 
 <style lang="scss" scoped>
 .custom-input {
-    width: 100%;
     min-width: 220px;
-    min-height: 40px;
+    min-height: 44px;
     border: 2px solid #FF662D;
     font-size: 18px;
-    outline: none;
     line-height: inherit;
     padding:  8px 15px;
 }
