@@ -6,7 +6,12 @@
              :items="cities"
              class="form__select"
              />
-            <CustomInput v-model="price" placeholder="Цена от"/>
+            <CustomInput 
+            v-model="price" 
+            placeholder="Цена от"
+            error-message="Не должо быть пустым"
+            :rules="[val => !!val]"
+            />
        
         <SubmitButton type="submit" class="form__btn">
             Подбор жилья
