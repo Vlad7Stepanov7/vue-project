@@ -30,6 +30,10 @@
     border: 1px solid #FF6629;
     color: #fff;
     
+    &:active {
+        color: red;
+    }
+    
     &--outlined {
         background-color: none;
         border: 1px solid #FF6629;

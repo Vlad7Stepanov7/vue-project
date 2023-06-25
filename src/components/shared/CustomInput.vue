@@ -1,6 +1,12 @@
 <template>
     <div class="wrapper-input">
-        <input v-on="listeners" class="custom-input" :class="!isValid && 'custom-input--error'"/>
+        <input 
+        v-on="listeners"
+        v-bind="$attrs" 
+        class="custom-input"
+        :class="!isValid && 'custom-input--error'"
+
+        />
         <span v-if="!isValid" class="custom-input__error">{{ errorMessage }}</span>
     </div>
 </template>
@@ -10,9 +16,12 @@
     name: 'CustomInput',
     data() {
         return {
-            isValid: true
+            isValid: true,
+            error: ''
         }
     },
+    injection: ['form'],
+    inheritAttrs: false,
     props: {
         modelValue: {
             type: String,
@@ -35,20 +44,44 @@
             }
     },
     watch: {
-        modelValue(modelValue) {
-            this.validate(modelValue);
-            console.log(modelValue);
+        modelValue() {
+            this.validate();
         }
+    },
+    mounted() {
+        if (!this.form) return;
+
+        this.form.registerInput(this)
+    },
+    beforeDestroy() {
+        if (!this.form) return;
+
+        this.form.unRegisterInput(this)
     },
     methods: {
         validate(value) {
-            this.isValid = this.rules.every(rule => rule(value));
+            this.isValid = this.rules.every(rule => {
+                const { hasPassed, message } = rule(value);
+
+                if (!hasPassed) {
+                    this.error = message || this.errorMessage;
+                }
+
+                return hasPassed;
+            });
+        },
+        reset() {
+                this.$emit('update:modelValue', '')
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
+.wrapper-input {
+    position: relative;
+    display: inline-flex;
+}
 .custom-input {
     min-width: 220px;
     min-height: 44px;
@@ -56,5 +89,23 @@
     font-size: 18px;
     line-height: inherit;
     padding:  8px 15px;
+
+    &::placeholder {
+        color: inherit;
+    }
+
+    &--error {
+        border-color: red;
+    }
+
+    &__error {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        font-size: 12px;
+        color: red;
+        line-height: 1.3;
+    }
 }
 </style>

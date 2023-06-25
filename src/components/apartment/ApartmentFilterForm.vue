@@ -7,10 +7,11 @@
              class="form__select"
              />
             <CustomInput 
-            v-model="price" 
+            v-model="price"
+            type="number"
             placeholder="Цена от"
             error-message="Не должо быть пустым"
-            :rules="[val => !!val]"
+            :rules="rules"
             />
        
         <SubmitButton type="submit" class="form__btn">
@@ -23,6 +24,7 @@
 import CustomSelect from '../shared/CustomSelect.vue';
 import CustomInput from '../shared/CustomInput.vue';
 import SubmitButton from '../Button.vue';
+import { isRequired, chartLimit } from '@/utils/validationRules';
 
     export default {
     components: {
@@ -32,13 +34,16 @@ import SubmitButton from '../Button.vue';
     },
     data() {
         return {
-            price: 0,
+            price: "0",
             city: ''
         }
     },
     computed: {
         cities() {
             return [ { value: '', label: 'Город', selected: true },'Kyiv', 'Odesa', 'Poltava', 'Kharkiv', 'Dnipro', 'Lviv', 'Kherson', 'Mariupol']
+        },
+        rules() {
+            return [isRequired, chartLimit(10)]
         }
     },
     methods: {
