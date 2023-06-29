@@ -1,5 +1,6 @@
 <template>
         <main class="homepage">
+            <SectionWidthHeaderSpacer>
                 <Container>
                     <ApartmentFilterForm @submitted="filter" class="apartments-filter" />
                 </Container>
@@ -19,6 +20,7 @@
                         </template>
                     </ApartmentsList>
                 </Container>
+            </SectionWidthHeaderSpacer>
         </main>
 </template>
 
@@ -27,6 +29,7 @@ import ApartmentsItem from '../components/apartment/ApartmentsItem.vue';
 import ApartmentsList from '../components/apartment/ApartmentsList.vue';
 import ApartmentFilterForm from '../components/apartment/ApartmentFilterForm.vue';
 import Container from '../components/shared/Container.vue';
+import SectionWidthHeaderSpacer from '../components/shared/SectionWidthHeaderSpacer.vue';
 import { getApartmentsList } from '../services/apartments.service';
 
 export default {
@@ -36,6 +39,7 @@ export default {
         ApartmentsList,
         ApartmentFilterForm,
         Container,
+        SectionWidthHeaderSpacer
     },
     data() {
         return {

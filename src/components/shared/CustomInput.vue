@@ -7,7 +7,7 @@
         :class="!isValid && 'custom-input--error'"
 
         />
-        <span v-if="!isValid" class="custom-input__error">{{ errorMessage }}</span>
+        <span v-if="!isValid" class="custom-input__error">{{ error }}</span>
     </div>
 </template>
 
@@ -20,7 +20,11 @@
             error: ''
         }
     },
-    injection: ['form'],
+    inject: {
+        form: {
+            default: null,
+        }
+    },
     inheritAttrs: false,
     props: {
         modelValue: {
@@ -61,7 +65,7 @@
     methods: {
         validate(value) {
             this.isValid = this.rules.every(rule => {
-                const { hasPassed, message } = rule(value);
+                const { hasPassed, message } = rule(this.modelValue);
 
                 if (!hasPassed) {
                     this.error = message || this.errorMessage;
@@ -80,10 +84,10 @@
 <style lang="scss" scoped>
 .wrapper-input {
     position: relative;
-    display: inline-flex;
+    margin-top: 20px;
 }
 .custom-input {
-    min-width: 220px;
+    width: 100%;
     min-height: 44px;
     border: 2px solid #FF662D;
     font-size: 18px;

@@ -1,5 +1,5 @@
 <template>
-    <form v-on="$listeners" class="form">
+    <form @submit="$listeners" class="form">
         <slot></slot>
     </form>
 </template>
@@ -24,7 +24,7 @@
         unRegisterInput(input) {
             this.inputs.filter(item => item !== input)
         },
-        validate() {
+        validate: () => {
             return this.inputs.reduce((isValid, input) => {
                 const isInputValid = input.validate();
                 return isValid && isInputValid;

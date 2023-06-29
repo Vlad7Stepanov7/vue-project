@@ -5,6 +5,7 @@ import Homepage from './pages/HomePage.vue';
 import Apartment from './pages/Apartment.vue';
 import ErrorPage from './pages/ErrorPage.vue';
 import LoginPage from './pages/Login';
+import RegistrationPage from './pages/Registration.vue';
 
 const routes = [
     {
@@ -30,6 +31,11 @@ const routes = [
         component: LoginPage,
         name: 'login-page'
     },
+    {
+        path: '/registration',
+        component: RegistrationPage,
+        name: 'registration-page'
+    }
 ]
 
 const router = createRouter({

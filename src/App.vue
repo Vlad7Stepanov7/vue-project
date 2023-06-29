@@ -1,7 +1,7 @@
 <template>
   <div id="app">
+    <AppHeader/>
     <div class="content">
-      <AppHeader/>
       <router-view></router-view>
     </div>
     <AppFooter />
@@ -31,10 +31,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .content {
   flex-grow: 1;
-  padding-top: 120px;
 }
 </style>
