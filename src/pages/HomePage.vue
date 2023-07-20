@@ -7,7 +7,6 @@
                 <Container>
                     <p v-if="!filteredApartments.length">Ничего не найдено</p>
                     <ApartmentsList :items="filteredApartments">
-                        <template v-slot:title>New title</template>
                         <template v-slot:apartment="{ apartment }">
                             <ApartmentsItem 
                             :key="apartment.id"
@@ -59,7 +58,6 @@ export default {
         try {
             const { data } = await getApartmentsList();
             this.apartments = data;
-            console.log(data);
         } catch (error) {
             console.error(error);
         }

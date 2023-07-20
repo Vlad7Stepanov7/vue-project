@@ -15,7 +15,9 @@
     "gh-pages": "^5.0.0",
     "vue": "^3.2.13",
     "vue-router": "^4.2.2",
-    "vue-toast-notification": "^3.1.1"
+    "vue-toast-notification": "^3.1.1",
+    "vuex": "^4.1.0",
+    "vuex-persistedstate": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~5.0.0",

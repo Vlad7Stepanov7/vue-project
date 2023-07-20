@@ -52,10 +52,6 @@ import { getApartmentById } from '../services/apartments.service';
             console.log(error);
         }
     },
-    mounted() {
-        
-        console.log(this.apartment);
-        }
     }
 </script>
 

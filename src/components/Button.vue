@@ -50,7 +50,7 @@ import CircleLoader from './loaders/Circle';
     position: relative;
     display: inline-block;
     min-width: 220px;
-    min-height: 44px;
+    height: 44px;
     background-color: #FF662D;
     border: 1px solid #FF6629;
     color: #fff;

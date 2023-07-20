@@ -38,7 +38,7 @@
 .custom-select {
     display: inline-block;
     min-width: 220px;
-    min-height: 44px;
+    height: 44px;
     border: 2px solid #FF662D;
     font-size: 18px;
     padding: 8px 15px;

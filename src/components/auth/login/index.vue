@@ -29,7 +29,10 @@ import Button from '../../Button';
 import AuthContainer from '../../auth/AuthContainer';
 import { emailValidation, passwordValidation, isRequired } from '../../../utils/validationRules';
 import MainTitle from '../../shared/MainTitle';
-import { loginUser } from '../../../services/auth';
+import { useToast } from 'vue-toast-notification';
+import { mapActions } from 'vuex';
+
+const $toast = useToast();
 
 export default {
     name: 'Login',
@@ -65,6 +68,7 @@ export default {
         }
     },
     methods: {
+        ...mapActions('auth', ['login']),
        async handleSubmit() {
             const { email, password } = this.formData;
             if (email === "" || password === '') {
@@ -73,10 +77,13 @@ export default {
             }
             try {
                 this.loading = true;
-                const { data } = await loginUser(this.formData);
-                console.log(data);
+
+                await this.login(this.formData);
+
+                this.$router.push({ name: 'homepage' });
+                let instance = $toast.success("You did it", { position: 'top' });
             } catch (error) {
-                console.log(error);
+                let instance = $toast.error("Error", { position: 'top' });
             } finally {
                 this.loading = false
             }

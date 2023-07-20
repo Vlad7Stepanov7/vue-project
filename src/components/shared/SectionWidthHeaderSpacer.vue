@@ -1,6 +1,6 @@
 <template>
     <div class="section-spacer">
-
+        <slot></slot>
     </div>
 </template>
 

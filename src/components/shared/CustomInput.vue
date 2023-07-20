@@ -84,7 +84,7 @@
 <style lang="scss" scoped>
 .wrapper-input {
     position: relative;
-    margin-top: 20px;
+    /* margin-top: 20px; */
 }
 .custom-input {
     width: 100%;

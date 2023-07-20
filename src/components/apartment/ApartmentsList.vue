@@ -1,6 +1,6 @@
 <template>
     <Container>
-        <slot name="title"></slot>
+        <p class="apartments-title">Подборка согласно выбора</p>
         <div class="apartments-list">
             <template v-for="apartment in items">
             <slot name="apartment" v-bind:apartment="apartment"></slot>
@@ -31,5 +31,13 @@ export default {
     display: flex;
     flex-wrap: wrap;
     margin: -15px;
+}
+.apartments-title {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #000;
+    text-align: left;
 }
 </style>
